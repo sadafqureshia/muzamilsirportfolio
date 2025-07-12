@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malik Muzamil Ishaq - Portfolio</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading Portfolio</div>
+        </div>
+    </div>
+
+    <!-- Main Portfolio -->
+    <div id="mainPortfolio">
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-text">Malik Muzamil</span>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#publications" class="nav-link">Research</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button class="admin-btn" onclick="showAdminLogin()">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Admin</span>
+                    </button>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-badge reveal-up">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Assistant Professor & AI Researcher</span>
+                </div>
+                <h1 class="hero-title reveal-up">
+                    <span class="title-line">Malik Muzamil</span>
+                    <span class="title-line accent">Ishaq</span>
+                </h1>
+                <p class="hero-description reveal-up">
+                    Crafting the future of AI and Machine Learning through innovative research
+                    and transformative education in the digital age.
+                </p>
+                <div class="hero-buttons reveal-up">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Explore Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get in Touch</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="hero-stats reveal-up">
+                    <div class="stat-item">
+                        <span class="stat-number">190+</span>
+                        <span class="stat-label">Citations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Years Teaching</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Research Papers</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Bridging Academia and Innovation</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image reveal-left">
+                        <div class="image-container">
+                            <div class="image-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content reveal-right">
+                        <div class="about-text">
+                            <p>
+                                Currently serving as <strong>Assistant Professor</strong> at Akal University, Punjab,
+                                I bring cutting-edge AI research into the classroom, inspiring the next
+                                generation of computer scientists and innovators.
+                            </p>
+                            <p>
+                                With a <strong>Master's degree in Computer Science</strong> from Central University of Punjab
+                                and a passion for Machine Learning applications in real-world problems,
+                                my work focuses on making AI accessible and impactful.
+                            </p>
+                            <p>
+                                My research in <strong>agricultural disease detection</strong> using deep learning has garnered
+                                over 190 citations, reflecting its significance in bridging technology with
+                                sustainable farming practices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Experience</h2>
+                    <p class="section-subtitle">My Professional Journey</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <span class="timeline-date">August 2024 - Present</span>
+                                <span class="timeline-status">Current</span>
+                            </div>
+                            <h3 class="timeline-title">Assistant Professor</h3>
+                            <p class="timeline-company">Akal University, Punjab</p>
+                            <p class="timeline-description">
+                                Teaching B.Tech and MBA programs, mentoring students in cutting-edge technologies,
+                                and leading research initiatives in AI and Machine Learning.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <span class="timeline-date">March 2023 - August 2024</span>
+                            </div>
+                            <h3 class="timeline-title">Assistant Professor & Research Coordinator</h3>
+                            <p class="timeline-company">Chandigarh University, Mohali</p>
+                            <p class="timeline-description">
+                                Led research initiatives, guided students in academic research projects,
+                                and coordinated interdisciplinary research collaborations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <span class="timeline-date">2020 - 2022</span>
+                            </div>
+                            <h3 class="timeline-title">Master's in Computer Science</h3>
+                            <p class="timeline-company">Central University of Punjab</p>
+                            <p class="timeline-description">
+                                Specialized in AI and Machine Learning with focus on practical applications
+                                in agricultural technology and disease detection systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Expertise</h2>
+                    <p class="section-subtitle">Technologies I Work With</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category reveal-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-title">Programming Languages</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">C/C++</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="skill-title">AI & Machine Learning</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Deep Learning</span>
+                            <span class="skill-item">Neural Networks</span>
+                            <span class="skill-item">Computer Vision</span>
+                            <span class="skill-item">TensorFlow</span>
+                            <span class="skill-item">PyTorch</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="skill-title">Data & Systems</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">DBMS</span>
+                            <span class="skill-item">Data Structures</span>
+                            <span class="skill-item">Algorithms</span>
+                            <span class="skill-item">Operating Systems</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="skill-title">Tools & Platforms</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Power BI</span>
+                            <span class="skill-item">WordPress</span>
+                            <span class="skill-item">LaTeX</span>
+                            <span class="skill-item">Git</span>
+                            <span class="skill-item">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Showcasing My Work</p>
+                </div>
+                <div id="projectsContainer" class="projects-grid">
+                    <div class="loading-state" id="projectsLoading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading projects...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Research Publications</h2>
+                    <p class="section-subtitle">Contributing to Scientific Knowledge</p>
+                </div>
+                <div class="publications-grid">
+                    <div class="publication-card featured reveal-up">
+                        <div class="publication-badge">Featured</div>
+                        <div class="publication-content">
+                            <h3 class="publication-title">
+                                Machine Learning and Deep Learning based Computational Techniques 
+                                in Automatic Agricultural Diseases Detection
+                            </h3>
+                            <p class="publication-journal">Archives of Computational Methods in Engineering</p>
+                            <div class="publication-stats">
+                                <div class="stat-badge sci">SCI-E Journal</div>
+                                <div class="stat-badge impact">Impact Factor: 9.7</div>
+                                <div class="stat-badge citations">190+ Citations</div>
+                                <div class="stat-badge rank">Q1 Ranked</div>
+                            </div>
+                            <p class="publication-abstract">
+                                This comprehensive review explores the application of machine learning and deep learning 
+                                techniques in automatic detection of agricultural diseases, providing insights into 
+                                sustainable farming practices through technology integration.
+                            </p>
+                            <a href="https://link.springer.com/article/10.1007/s11831-021-09588-5" target="_blank" 
+                               class="btn btn-outline">
+                                <span>Read Paper</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="publication-card reveal-up">
+                        <div class="publication-content">
+                            <h3 class="publication-title">
+                                Design and Development of a User-friendly Social Media App 
+                                using the MERN Stack
+                            </h3>
+                            <p class="publication-journal">Scopus Indexed Publication</p>
+                            <div class="publication-stats">
+                                <div class="stat-badge date">Published: August 2023</div>
+                                <div class="stat-badge tech">Full Stack Development</div>
+                            </div>
+                            <p class="publication-abstract">
+                                A comprehensive study on developing user-centric social media applications 
+                                using modern web technologies and best practices in user experience design.
+                            </p>
+                            <a href="#" class="btn btn-outline">
+                                <span>Read Paper</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Latest Blog Posts</h2>
+                    <p class="section-subtitle">Thoughts and Insights</p>
+                </div>
+                <div id="blogContainer" class="blog-grid">
+                    <div class="loading-state" id="blogLoading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading blog posts...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's Connect and Collaborate</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info reveal-left">
+                        <div class="contact-intro">
+                            <h3>Ready to collaborate?</h3>
+                            <p>
+                                I'm always open to discussing new opportunities, research collaborations,
+                                or just having a conversation about AI and technology.
+                            </p>
+                        </div>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">muzamilmalik754@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Phone</span>
+                                    <span class="contact-value">+91 7889842002</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Location</span>
+                                    <span class="contact-value">Srinagar, J&K, India</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">LinkedIn</span>
+                                    <span class="contact-value">malik-muzamil-927113239</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container reveal-right">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Name</label>
+                                    <input type="text" id="contactName" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Email</label>
+                                    <input type="email" id="contactEmail" name="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject">Subject</label>
+                                <input type="text" id="contactSubject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">Message</label>
+                                <textarea id="contactMessage" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <h3>Malik Muzamil Ishaq</h3>
+                        <p>Assistant Professor & AI Researcher</p>
+                        <p>Crafting the future through education and innovation</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>Navigation</h4>
+                            <a href="#about">About</a>
+                            <a href="#experience">Experience</a>
+                            <a href="#projects">Projects</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Research</h4>
+                            <a href="#publications">Publications</a>
+                            <a href="#blog">Blog</a>
+                            <a href="https://scholar.google.com/citations?user=NJT6Pn0AAAAJ&hl=en" target="_blank">Google Scholar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/malik-muzamil-927113239" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=NJT6Pn0AAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="mailto:muzamilmalik754@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="footer-text">© 2024 Malik Muzamil Ishaq. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-dashboard" id="adminDashboard">
+        <div class="admin-header">
+            <div class="admin-nav">
+                <div class="admin-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Admin Dashboard</span>
+                </div>
+                <div class="admin-user">
+                    <div class="user-info">
+                        <span class="user-email" id="adminUserEmail"></span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                    <button class="btn-logout" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="admin-content">
+            <div class="admin-sidebar">
+                <div class="sidebar-menu">
+                    <button class="menu-item active" data-section="overview">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Overview</span>
+                    </button>
+                    <button class="menu-item" data-section="projects">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projects</span>
+                    </button>
+                    <button class="menu-item" data-section="add-project">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Add Project</span>
+                    </button>
+                    <button class="menu-item" data-section="blog">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Posts</span>
+                    </button>
+                    <button class="menu-item" data-section="add-blog">
+                        <i class="fas fa-pen-nib"></i>
+                        <span>Add Blog</span>
+                    </button>
+                    <button class="menu-item" data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="admin-main">
+                <!-- Overview Section -->
+                <div class="admin-section active" id="overview">
+                    <div class="section-header">
+                        <h2>Dashboard Overview</h2>
+                        <p>Welcome back! Here's what's happening with your portfolio.</p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="totalProjects">0</span>
+                                <span class="stat-label">Total Projects</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-blog"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="totalBlogs">0</span>
+                                <span class="stat-label">Blog Posts</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number">1.2k</span>
+                                <span class="stat-label">Page Views</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number">24</span>
+                                <span class="stat-label">Messages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list" id="recentActivity">
+                            <!-- Activity items will be populated here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projects Section -->
+                <div class="admin-section" id="projects">
+                    <div class="section-header">
+                        <h2>Manage Projects</h2>
+                        <button class="btn btn-primary" onclick="switchAdminSection('add-project')">
+                            <i class="fas fa-plus"></i>
+                            <span>Add New Project</span>
+                        </button>
+                    </div>
+                    <div class="admin-projects-grid" id="adminProjectsGrid">
+                        <div class="loading-state">
+                            <div class="loading-spinner"></div>
+                            <p>Loading projects...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Project Section -->
+                <div class="admin-section" id="add-project">
+                    <div class="section-header">
+                        <h2>Add New Project</h2>
+                        <p>Create a new project to showcase your work</p>
+                    </div>
+                    <div class="form-container">
+                        <form id="addProjectForm" class="admin-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="projectTitle">Project Title *</label>
+                                    <input type="text" id="projectTitle" name="title" required>
+                                    <div class="form-error" id="projectTitleError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="projectCategory">Category</label>
+                                    <select id="projectCategory" name="category">
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="Mobile App">Mobile App</option>
+                                        <option value="AI/ML">AI/ML</option>
+                                        <option value="Research">Research</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectDescription">Description *</label>
+                                <textarea id="projectDescription" name="description" rows="4" required 
+                                    placeholder="Describe your project in detail..."></textarea>
+                                <div class="form-error" id="projectDescriptionError"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="projectTech">Technologies Used *</label>
+                                    <input type="text" id="projectTech" name="technologies" required 
+                                        placeholder="React, Node.js, MongoDB, etc.">
+                                    <div class="form-error" id="projectTechError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="projectStatus">Status</label>
+                                    <select id="projectStatus" name="status">
+                                        <option value="Completed">Completed</option>
+                                        <option value="In Progress">In Progress</option>
+                                        <option value="Planning">Planning</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="projectUrl">Project URL</label>
+                                    <input type="url" id="projectUrl" name="url" 
+                                        placeholder="https://example.com">
+                                    <div class="form-error" id="projectUrlError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="projectGithub">GitHub URL</label>
+                                    <input type="url" id="projectGithub" name="github" 
+                                        placeholder="https://github.com/username/repo">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectImage">Project Image URL</label>
+                                <input type="url" id="projectImage" name="image" 
+                                    placeholder="https://example.com/image.jpg">
+                                <div class="form-error" id="projectImageError"></div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Add Project</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary" onclick="resetForm('addProjectForm')">
+                                    <i class="fas fa-undo"></i>
+                                    <span>Reset</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Blog Section -->
+                <div class="admin-section" id="blog">
+                    <div class="section-header">
+                        <h2>Manage Blog Posts</h2>
+                        <button class="btn btn-primary" onclick="switchAdminSection('add-blog')">
+                            <i class="fas fa-plus"></i>
+                            <span>Add New Post</span>
+                        </button>
+                    </div>
+                    <div class="admin-blog-grid" id="adminBlogGrid">
+                        <div class="loading-state">
+                            <div class="loading-spinner"></div>
+                            <p>Loading blog posts...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Blog Section -->
+                <div class="admin-section" id="add-blog">
+                    <div class="section-header">
+                        <h2>Create New Blog Post</h2>
+                        <p>Share your thoughts and insights with the world</p>
+                    </div>
+                    <div class="form-container">
+                        <form id="addBlogForm" class="admin-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="blogTitle">Blog Title *</label>
+                                    <input type="text" id="blogTitle" name="title" required 
+                                        placeholder="Enter an engaging title...">
+                                    <div class="form-error" id="blogTitleError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="blogCategory">Category</label>
+                                    <select id="blogCategory" name="category">
+                                        <option value="AI & Machine Learning">AI & Machine Learning</option>
+                                        <option value="Research">Research</option>
+                                        <option value="Technology">Technology</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Personal">Personal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="blogExcerpt">Excerpt</label>
+                                <textarea id="blogExcerpt" name="excerpt" rows="2" 
+                                    placeholder="Brief description of your blog post..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="blogContent">Content *</label>
+                                <textarea id="blogContent" name="content" rows="8" required 
+                                    placeholder="Write your blog content here..."></textarea>
+                                <div class="form-error" id="blogContentError"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="blogTags">Tags</label>
+                                    <input type="text" id="blogTags" name="tags" 
+                                        placeholder="AI, Machine Learning, Research (comma separated)">
+                                    <div class="form-error" id="blogTagsError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="blogStatus">Status</label>
+                                    <select id="blogStatus" name="status">
+                                        <option value="Published">Published</option>
+                                        <option value="Draft">Draft</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="blogImage">Featured Image URL</label>
+                                <input type="url" id="blogImage" name="image" 
+                                    placeholder="https://example.com/featured-image.jpg">
+                                <div class="form-error" id="blogImageError"></div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Publish Post</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary" onclick="resetForm('addBlogForm')">
+                                    <i class="fas fa-undo"></i>
+                                    <span>Reset</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Settings Section -->
+                <div class="admin-section" id="settings">
+                    <div class="section-header">
+                        <h2>Dashboard Settings</h2>
+                        <p>Manage your dashboard preferences and account settings.</p>
+                    </div>
+                    <div class="settings-grid">
+                        <div class="setting-card">
+                            <div class="setting-icon">
+                                <i class="fas fa-user-edit"></i>
+                            </div>
+                            <h3>Profile Information</h3>
+                            <p>Update your profile details and contact information.</p>
+                            <button class="btn btn-secondary" onclick="showEditProfile()">
+                                <i class="fas fa-edit"></i>
+                                <span>Edit Profile</span>
+                            </button>
+                        </div>
+                        <div class="setting-card">
+                            <div class="setting-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h3>Security Settings</h3>
+                            <p>Manage your password and security preferences.</p>
+                            <button class="btn btn-secondary" onclick="showChangePassword()">
+                                <i class="fas fa-key"></i>
+                                <span>Change Password</span>
+                            </button>
+                        </div>
+                        <div class="setting-card">
+                            <div class="setting-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h3>Backup & Export</h3>
+                            <p>Download your data or create backups.</p>
+                            <button class="btn btn-secondary" onclick="exportData()">
+                                <i class="fas fa-file-export"></i>
+                                <span>Export Data</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="adminModal">
+        <div class="modal-overlay" onclick="closeModal('adminModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Admin Access</h2>
+                <button class="modal-close" onclick="closeModal('adminModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="adminLoginForm" class="modal-form">
+                <div class="form-group">
+                    <label for="adminEmail">Email</label>
+                    <input type="email" id="adminEmail" required>
+                    <div class="form-error" id="adminEmailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" required>
+                    <div class="form-error" id="adminPasswordError"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span>Login</span>
+                    <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="changePasswordModal">
+        <div class="modal-overlay" onclick="closeModal('changePasswordModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Change Password</h2>
+                <button class="modal-close" onclick="closeModal('changePasswordModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="changePasswordForm" class="modal-form">
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" required>
+                    <div class="form-error" id="currentPasswordError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" required>
+                    <div class="form-error" id="newPasswordError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="confirmPassword" required>
+                    <div class="form-error" id="confirmPasswordError"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span>Update Password</span>
+                    <i class="fas fa-key"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="editProfileModal">
+        <div class="modal-overlay" onclick="closeModal('editProfileModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Edit Profile</h2>
+                <button class="modal-close" onclick="closeModal('editProfileModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="editProfileForm" class="modal-form">
+                <div class="form-group">
+                    <label for="profileName">Full Name</label>
+                    <input type="text" id="profileName" value="Malik Muzamil Ishaq" required>
+                </div>
+                <div class="form-group">
+                    <label for="profileTitle">Professional Title</label>
+                    <input type="text" id="profileTitle" value="Assistant Professor & AI Researcher" required>
+                </div>
+                <div class="form-group">
+                    <label for="profileBio">Bio</label>
+                    <textarea id="profileBio" rows="4" required>Crafting the future of AI and Machine Learning through innovative research and transformative education in the digital age.</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span>Update Profile</span>
+                    <i class="fas fa-save"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
