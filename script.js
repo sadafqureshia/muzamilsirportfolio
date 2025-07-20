@@ -25,16 +25,16 @@ const loader = document.getElementById('loader');
 const navbar = document.querySelector('.navbar');
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
 const mainPortfolio = document.getElementById('mainPortfolio');
 const adminDashboard = document.getElementById('adminDashboard');
+const themeToggle = document.getElementById('themeToggle');
 
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
     initializeApp();
     setupEventListeners();
     loadContent();
+    initializeTheme();
 });
 
 function initializeApp() {
@@ -48,11 +48,6 @@ function initializeApp() {
         }, 1500);
     });
 
-    // Custom cursor (desktop only)
-    if (window.innerWidth > 768) {
-        setupCustomCursor();
-    }
-
     // Reveal animations
     setupRevealAnimations();
 
@@ -61,60 +56,12 @@ function initializeApp() {
 
     // Smooth scrolling
     setupSmoothScrolling();
-}
 
-function setupCustomCursor() {
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-    let followerX = 0;
-    let followerY = 0;
+    // Counter animations
+    setupCounterAnimations();
 
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    function animateCursor() {
-        // Smooth cursor movement
-        cursorX += (mouseX - cursorX) * 0.9;
-        cursorY += (mouseY - cursorY) * 0.9;
-        
-        followerX += (mouseX - followerX) * 0.1;
-        followerY += (mouseY - followerY) * 0.1;
-
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        cursorFollower.style.left = followerX + 'px';
-        cursorFollower.style.top = followerY + 'px';
-
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // Cursor interactions
-    document.addEventListener('mousedown', () => {
-        cursor.classList.add('cursor-expand');
-    });
-
-    document.addEventListener('mouseup', () => {
-        cursor.classList.remove('cursor-expand');
-    });
-
-    // Hover effects
-    const hoverElements = document.querySelectorAll('a, button, .project-card, .blog-card, .skill-category');
-    hoverElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(1.5)';
-            cursorFollower.style.transform = 'scale(1.2)';
-        });
-
-        element.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
-            cursorFollower.style.transform = 'scale(1)';
-        });
-    });
+    // Active navigation
+    setupActiveNavigation();
 }
 
 function setupEventListeners() {
@@ -136,6 +83,9 @@ function setupEventListeners() {
 
     // Navbar scroll effect
     window.addEventListener('scroll', handleScroll);
+
+    // Theme toggle
+    themeToggle.addEventListener('click', toggleTheme);
 
     // Form event listeners
     setupFormEventListeners();
@@ -160,13 +110,35 @@ function setupEventListeners() {
     });
 }
 
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+    
+    showNotification(`Switched to ${newTheme} theme`, 'info');
+}
+
+function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+}
+
 function handleScroll() {
     const scrolled = window.scrollY > 50;
     navbar.classList.toggle('scrolled', scrolled);
 }
 
 function setupRevealAnimations() {
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .timeline-item, .skill-category, .project-card, .blog-card, .publication-card');
     
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -209,6 +181,61 @@ function setupSmoothScrolling() {
     });
 }
 
+function setupCounterAnimations() {
+    const counters = document.querySelectorAll('[data-count]');
+    
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current);
+                }, 16);
+                
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+}
+
+function setupActiveNavigation() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
 function setupModalEventListeners() {
     // Global modal functions
     window.showAdminLogin = () => showModal('adminModal');
@@ -218,6 +245,7 @@ function setupModalEventListeners() {
     window.logout = logout;
     window.exportData = exportData;
     window.resetForm = resetForm;
+    window.toggleTheme = toggleTheme;
 
     // Close modal on overlay click
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
@@ -697,6 +725,11 @@ function loadRecentActivity() {
             icon: 'fas fa-envelope',
             title: 'New message received',
             time: '3 days ago'
+        },
+        {
+            icon: 'fas fa-chart-line',
+            title: 'Analytics updated',
+            time: '1 week ago'
         }
     ];
     
@@ -735,7 +768,7 @@ async function loadAdminProjects() {
         
     } catch (error) {
         console.error('Error loading admin projects:', error);
-        container.innerHTML = '<p style="text-align: center; color: #ef4444; grid-column: 1 / -1;">Error loading projects.</p>';
+        container.innerHTML = '<p style="text-align: center; color: var(--error); grid-column: 1 / -1;">Error loading projects.</p>';
     }
 }
 
@@ -792,7 +825,7 @@ async function loadAdminBlogs() {
         
     } catch (error) {
         console.error('Error loading admin blogs:', error);
-        container.innerHTML = '<p style="text-align: center; color: #ef4444; grid-column: 1 / -1;">Error loading blog posts.</p>';
+        container.innerHTML = '<p style="text-align: center; color: var(--error); grid-column: 1 / -1;">Error loading blog posts.</p>';
     }
 }
 
@@ -958,8 +991,8 @@ async function loadProjects() {
         if (snapshot.empty) {
             projectsContainer.innerHTML = `
                 <div style="grid-column: 1 / -1; text-align: center; padding: 4rem; opacity: 0.6;">
-                    <i class="fas fa-folder-open" style="font-size: 3rem; margin-bottom: 1rem; display: block; color: var(--gray-400);"></i>
-                    <p style="color: var(--gray-600);">No projects added yet. Check back soon!</p>
+                    <i class="fas fa-folder-open" style="font-size: 3rem; margin-bottom: 1rem; display: block; color: var(--text-muted);"></i>
+                    <p style="color: var(--text-secondary);">No projects added yet. Check back soon!</p>
                 </div>
             `;
             return;
@@ -984,8 +1017,8 @@ async function loadProjects() {
         // Show fallback content instead of error
         projectsContainer.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 4rem; opacity: 0.6;">
-                <i class="fas fa-folder-open" style="font-size: 3rem; margin-bottom: 1rem; display: block; color: var(--gray-400);"></i>
-                <p style="color: var(--gray-600);">Projects will appear here soon!</p>
+                <i class="fas fa-folder-open" style="font-size: 3rem; margin-bottom: 1rem; display: block; color: var(--text-muted);"></i>
+                <p style="color: var(--text-secondary);">Projects will appear here soon!</p>
             </div>
         `;
     }
@@ -1048,8 +1081,8 @@ async function loadBlogs() {
         if (snapshot.empty) {
             blogContainer.innerHTML = `
                 <div style="grid-column: 1 / -1; text-align: center; padding: 4rem; opacity: 0.6;">
-                    <i class="fas fa-pen-fancy" style="font-size: 3rem; margin-bottom: 1rem; display: block; color: var(--gray-400);"></i>
-                    <p style="color: var(--gray-600);">No blog posts yet. Stay tuned for insights!</p>
+                    <i class="fas fa-pen-fancy" style="font-size: 3rem; margin-bottom: 1rem; display: block; color: var(--text-muted);"></i>
+                    <p style="color: var(--text-secondary);">No blog posts yet. Stay tuned for insights!</p>
                 </div>
             `;
             return;
@@ -1074,8 +1107,8 @@ async function loadBlogs() {
         // Show fallback content instead of error
         blogContainer.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 4rem; opacity: 0.6;">
-                <i class="fas fa-pen-fancy" style="font-size: 3rem; margin-bottom: 1rem; display: block; color: var(--gray-400);"></i>
-                <p style="color: var(--gray-600);">Blog posts will appear here soon!</p>
+                <i class="fas fa-pen-fancy" style="font-size: 3rem; margin-bottom: 1rem; display: block; color: var(--text-muted);"></i>
+                <p style="color: var(--text-secondary);">Blog posts will appear here soon!</p>
             </div>
         `;
     }
@@ -1169,8 +1202,8 @@ function showLoadingState(message) {
     
     loadingOverlay.innerHTML = `
         <div style="text-align: center;">
-            <div style="width: 40px; height: 40px; border: 3px solid var(--gray-200); border-top: 3px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
-            <p style="font-family: var(--font-primary); font-size: 0.9rem; color: var(--gray-600); letter-spacing: 0.05em;">${message}</p>
+            <div style="width: 40px; height: 40px; border: 3px solid var(--border); border-top: 3px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
+            <p style="font-family: var(--font-primary); font-size: 0.9rem; color: var(--text-secondary); letter-spacing: 0.05em;">${message}</p>
         </div>
     `;
     
